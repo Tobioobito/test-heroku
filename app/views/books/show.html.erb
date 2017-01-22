@@ -1,0 +1,18 @@
+<h1>Affichage d'un livre</h1>
+
+<p><%= @un_livre.title %></p>
+
+<%= form_tag "/books/#{@un_livre.id}", method:"patch" do %>
+
+<input type="text" name="title" placeholder="Titre">
+<input type="text" name="content" placeholder="Contenu">
+<input type="text" name="author" placeholder="auteur">
+<input type="submit" value="Ajouter un livre">
+	<% end %>
+
+
+<%= form_tag "/books/#{@un_livre.id}", method: "delete" do %>
+  <input type="submit" value="Supprimer le livre" />
+<% end %>
+
+<a href="/books">Revenir à la liste</a>

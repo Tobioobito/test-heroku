@@ -1,0 +1,20 @@
+<h1>Listes de livres</h1>
+
+<% @les_livres.each do |un_livre| %>
+
+<br><b><%= un_livre.title %></b>
+par <i><%= un_livre.author %></i> 
+<br><%= un_livre.content %><br>
+<a href="/books/<%= un_livre.id %>">Modifier le livre</a><br>
+<% end %>
+
+
+
+<%= form_tag "/books", method:"post" do %>
+
+<input type="text" name="title" placeholder="Titre">
+<input type="text" name="content" placeholder="Contenu">
+<input type="text" name="author" placeholder="auteur">
+<input type="submit" value="Ajouter un livre">
+	<% end %>
+	
